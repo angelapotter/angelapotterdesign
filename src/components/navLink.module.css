@@ -1,0 +1,9 @@
+.link {
+  background: white;
+}
+
+.link:hover,
+.link:focus,
+.link:active {
+  background: #ff0;
+}

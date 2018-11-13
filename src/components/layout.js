@@ -1,14 +1,12 @@
 import React from "react"
-import { Link } from "gatsby"
+import Header from './header'
+import './theme.css'
+import layoutStyles from './layout.module.css'
 
 export default ({children}) => (
   <div>
-    <div>
-      <Link to='/'>Work</Link>
-      <Link to='/about'>About</Link>
-      <Link to='/resume'>Resume</Link>
-    </div>
-    <div>
+    <Header />
+    <div className={layoutStyles.container}>
       {children}
     </div>
   </div>
