@@ -1,5 +1,4 @@
 import React from "react"
-// import projects from '../utils/projects.js'
 
 
 export default () => {
@@ -119,8 +118,11 @@ export default () => {
   ]
   return(
   <div>
-    {projects.map((item,key) => (
-      <div key={item.name}>{item.name}</div>
+    {projects.map((item) => (
+      <div key={item.slug}>
+        <img src={'/public/' + item.slug + '.png'} />
+        {item.name}
+      </div>
     ))}
 
   </div>

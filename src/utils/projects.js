@@ -4,7 +4,7 @@ export default () => ([
     company: 'Kelvin',
     role: 'Lead Design',
     platform: 'Web',
-    slug: 'kelvin-control-models',
+    slug: 'kelvinControlModels',
     blurb: "Empower analysts to tune control models for natural gas wells",
     show_case_study: true
   },
