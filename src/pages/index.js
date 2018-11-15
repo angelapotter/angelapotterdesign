@@ -9,7 +9,7 @@ export default ({data}) => {
   return (
     <Layout>
       <h1>Work</h1>
-      <Gallery projects={data.allIndexJson.edges} image={data.imageOne.childImageSharp.fluid} />
+      <Gallery projects={data.allIndexJson.edges} images={data.coverImages.edges} />
     </Layout>
   )
 }
@@ -24,10 +24,15 @@ export const query = graphql`
         }
       }
     }
-    imageOne: file(relativePath: { eq: "doubledutch-edit-app/cover.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
+    coverImages: allFile(filter: { extension: {eq: "jpg"}, name: { eq: "cover" } }) {
+      edges {
+         node {
+          relativeDirectory
+          childImageSharp {
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
     }
