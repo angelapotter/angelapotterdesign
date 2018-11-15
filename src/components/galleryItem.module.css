@@ -1,0 +1,5 @@
+.name {
+  padding-top: 20px;
+  font-size: 125%;
+  text-overflow: ellipsis;
+}
