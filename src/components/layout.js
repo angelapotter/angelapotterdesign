@@ -1,13 +1,15 @@
 import React from "react"
 import Header from './header'
-import './theme.css'
-import layoutStyles from './layout.module.css'
+import Footer from './footer'
 
-export default ({children}) => (
+import './theme.css'
+
+export default props => (
   <div>
     <Header />
-    <div className={layoutStyles.container}>
-      {children}
+    <div className={'pageContainer ' + (props.containerClassName ? props.containerClassName : '')}>
+      {props.children}
     </div>
+    <Footer />
   </div>
 )

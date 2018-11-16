@@ -5,3 +5,47 @@ a:active {
   text-decoration: none;
   color: inherit;
 }
+
+h1,h2,h3,h4,h5,h6 {
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+h2 {
+  color: rgba(0,0,0,0.3);
+}
+
+h3 {
+  font-size: 150%;
+}
+
+.pageContainer {
+  margin: 108px auto 0;
+  padding: 40px;
+}
+
+.constrainWidth {
+  max-width: 1440px;
+}
+
+.textLink:hover.
+.textLink:focus,
+.textLink:active {
+  background: #ff0;
+}
+
+.content h2 {
+  margin-top: 3.8rem;
+  margin-bottom: 2rem;
+}
+
+.content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1.4rem;
+}
+
+.subhead {
+  font-size: 125%;
+  font-family: 'PT Serif', serif;
+}
