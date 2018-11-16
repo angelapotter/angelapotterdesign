@@ -1,0 +1,17 @@
+.company {
+  margin-top: 2.5rem;
+  font-weight: bold;
+}
+
+.role {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.content li {
+  margin-bottom: 0.4rem;
+}
+
+.content ul {
+  margin-bottom: 2rem;
+}
