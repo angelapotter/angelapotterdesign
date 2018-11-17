@@ -7,7 +7,7 @@ import ProjectIntro from "../components/projectIntro"
 import Grid from "../components/grid"
 import projectStyles from '../components/project.module.css'
 
-export default ({data}) => {
+export default props => {
 
   const imageFromName = ( images,name ) => {
     return images.find(function(image) {
@@ -24,7 +24,7 @@ export default ({data}) => {
     <ProjectIntro
       title='Control Model Parameters'
       subhead='Empower analysts to tune control models for natural gas wells'
-      fluid={imageFromName(data.projectImages.edges, 'sample').node.childImageSharp.fluid} />
+      fluid={imageFromName(props.data.projectImages.edges, 'sample').node.childImageSharp.fluid} />
 
     <div className='content'>
       <h2>Context</h2>
@@ -42,7 +42,7 @@ export default ({data}) => {
       <Grid>
 
         <ProjectPersona
-          fixed={imageFromName(data.avatars.edges, 'pumper-avatar').node.childImageSharp.fixed}
+          fixed={imageFromName(props.data.avatars.edges, 'pumper-avatar').node.childImageSharp.fixed}
           name='Pumper'>
           <p>Creates daily reports for ~<strong>30 wells</strong> based on what he sees in the field</p>
           <p>Performs routine well maintenance, adjusts new wells and recommends <strong>equipment changes</strong></p>
@@ -50,7 +50,7 @@ export default ({data}) => {
         </ProjectPersona>
 
         <ProjectPersona
-          fixed={imageFromName(data.avatars.edges, 'optimizer-avatar').node.childImageSharp.fixed}
+          fixed={imageFromName(props.data.avatars.edges, 'optimizer-avatar').node.childImageSharp.fixed}
           name='Optimizer'>
           <p>Diagnoses systemic defects for ~<strong>300 wells</strong> based on analysis of charts & logs</p>
           <p>Adjusts valve <strong>open/close criteria</strong> and recommends equipment changes</p>
@@ -58,7 +58,7 @@ export default ({data}) => {
         </ProjectPersona>
 
         <ProjectPersona
-          fixed={imageFromName(data.avatars.edges, 'optimization-lead-avatar').node.childImageSharp.fixed}
+          fixed={imageFromName(props.data.avatars.edges, 'optimization-lead-avatar').node.childImageSharp.fixed}
           name='Optimization Lead'>
           <p>Oversees a team of 5-10 optimizers</p>
           <p>Calculates <strong>ROI</strong> by comparing production, touchpoints, & equipment costs</p>
@@ -92,8 +92,8 @@ export default ({data}) => {
       <Grid>
         <Img
           style={{gridColumn: 'span 2'}}
-          fluid={imageFromName(data.projectImages.edges, 'data-interviews').node.childImageSharp.fluid} />
-        <p class='subhead'>We interviewed 8 data team members to better understand their workflow.</p>
+          fluid={imageFromName(props.data.projectImages.edges, 'data-interviews').node.childImageSharp.fluid} />
+        <p className='subhead'>We interviewed 8 data team members to better understand their workflow.</p>
       </Grid>
 
       <p>When we started, we didn't know a lot about <strong>how control models work</strong> on our team. These were our takeaways:</p>
@@ -117,7 +117,7 @@ export default ({data}) => {
       <p>Based on this, we decided to focus on those data team members, and defined them as a new persona:</p>
 
       <ProjectPersona
-        fixed={imageFromName(data.avatars.edges, 'super-optimizer-avatar').node.childImageSharp.fixed}
+        fixed={imageFromName(props.data.avatars.edges, 'super-optimizer-avatar').node.childImageSharp.fixed}
         name='Super Optimizer'>
         <p>Currently a <strong>Kelvin data team member</strong>, but a role that we expect clients to have in the future; replaces several optimizers</p>
         <p>Has domain expertise and understands the basics of control models; does not code</p>
@@ -133,9 +133,9 @@ export default ({data}) => {
         <li>Give clients transparency into how successfully models are running and what changes are being made.</li>
       </ul>
 
-      <h2>Exploring App Architecture</h2>
+      <h2>App Architecture</h2>
 
-      <Img fluid={fluidFromName(data.projectImages, 'architecture-diagrams')} />
+      <Img fluid={fluidFromName(props.data.projectImages, 'architecture-diagrams')} />
       <p>I created some diagrams to show how models could <strong>fit into our existing application</strong>. Though most of this was scoped out for V1, on a high level I wanted to make sure we were setting ourselves up for future iterations.</p>
 
       <h2>Model Content</h2>
@@ -143,14 +143,95 @@ export default ({data}) => {
       <Grid>
 
         <div>
-          <p>A big piece of this project was determining what actually needed to be shown and edited for our control models. It was a long process of interviews and information-gathering sessions with the data team to figure out:</p>
-          <li>How do users tell if a model is running suboptimally?</li>
-          <li>What parameters exist on each model, and how much should we show to users?</li>
-          <li>What context do users need to actually change a model parameter?</li>
+          <p>A big piece of this project was determining <strong>what actually needed to be shown and edited</strong> for our control models. It was a long process of interviews and information-gathering sessions with the data team to figure out:</p>
+          <ul>
+            <li>How do users tell if a model is running suboptimally?</li>
+            <li>What parameters exist on each model, and how much should we show to users?</li>
+            <li>What context do users need to actually change a model parameter?</li>
+          </ul>
         </div>
 
-        <Img fluid={fluidFromName(data.projectImages, 'model-content')} />
+        <Img
+          style={{gridColumn: 'span 2'}}
+          fluid={fluidFromName(props.data.projectImages, 'model-content')}
+          alt='Model content documenation' />
 
+      </Grid>
+
+      <h2>Initial Wireframes</h2>
+
+      <p>I wireframed some of these views to illustrate our first draft of functionality and model content. We did around of lightweight feedback from the data team with these and got good feedback on content and language.</p>
+
+      <div className='subhead'>
+        <strong>Left</strong>: control models on a specific well. <strong>Right</strong>: overview of models for all wells
+      </div>
+
+      <Img
+        fluid={fluidFromName(props.data.projectImages, 'wireframes')}
+        alt='Wireframes' />
+
+      <h2>High Fidelity and More User Testing</h2>
+
+      <Grid>
+        <Img
+          className={projectStyles.imageBorder}
+          style={{gridColumn: 'span 2'}}
+          fluid={fluidFromName(props.data.projectImages, 'hi-fi-v1')}
+          alt='High fidelity mockups v1' />
+        <div>
+          <p>I knew that the super-optimizer needed to reference <strong>RTU settings</strong> to make model parameter changes, so initially I put them at the top of the screen as an expandable gray box. This felt a bit clunky, and when it was collapsed users mistook it for a header.</p>
+          <p>From feedback on these mockups, I was able to narrow down exactly what information was needed for each model parameter so I could refine this.</p>
+        </div>
+      </Grid>
+
+
+      <Grid>
+        <div>
+          <h2>Final Design</h2>
+          <p>Model <strong>parameters</strong> are shown side by side with <strong>performance metrics</strong> to help inform the user’s decision.</p>
+        </div>
+        <Img
+          style={{gridColumn: 'span 2'}}
+          fluid={fluidFromName(props.data.projectImages, 'final-design-view')}
+          alt='Final Design - View' />
+      </Grid>
+
+      <Grid>
+        <div>
+          <h3>Edit mode</h3>
+          <p>Editing a model reveals additional <strong>context</strong> in the form of calculated and current values.</p>
+          <p>These are the RTU settings that were at the top of the screen in the last mockup</p>
+        </div>
+        <Img
+          style={{gridColumn: 'span 2'}}
+          fluid={fluidFromName(props.data.projectImages, 'final-design-edit')}
+          alt='Final Design - Edit' />
+      </Grid>
+
+      <h2>Measure of Success</h2>
+
+      <p>We recently released this internally and to all clients. It’s still early but we’re hoping to:</p>
+
+      <ul>
+        <li>Decrease the time it takes to tune models for new wells</li>
+        <li>Give clients transparency into what model changes are being made</li>
+        <li>Learn clients’ current level of interest in tuning their own models</li>
+      </ul>
+
+      <Grid>
+        <div style={{gridColumn: 'span 2'}}>
+          <h2>Followup Improvements</h2>
+          <p>As development started, we realized that we needed to think in a more modular way with our layouts to support new models in the future. I worked with the development team to create components that could be built from a <strong>JSON</strong> file.</p>
+          <p>As we were rolling this out to production, there was some confusion about what each parameter means. This especially came up in training people who weren't familiar with the models. We added a <strong>tooltip</strong> component that could be added to the JSON, and I worked with the data team to get the language right.</p>
+          <Img
+            style={{gridColumn: 'span 2'}}
+            fluid={fluidFromName(props.data.projectImages, 'json-redlines')}
+            alt='JSON redlines' />
+        </div>
+
+        <Img
+          fluid={fluidFromName(props.data.projectImages, 'tooltips')}
+          alt='Tooltips' />
       </Grid>
 
     </div>
