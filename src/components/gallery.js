@@ -13,6 +13,7 @@ export default props =>  {
   return(
   <div className={galleryStyles.gallery}>
     {props.projects.map((project) => (
+
       <GalleryItem
         key={project.node.slug}
         project={project.node}

@@ -8,8 +8,8 @@ export default props => (
     <h1>{props.title}</h1>
     <div className='subhead'>{props.subhead}</div>
 
-    <Img
+    {/*<Img
       className={projectIntroStyles.sampleImage}
-      fluid={props.fluid} />
+      fluid={props.fluid} />*/}
   </div>
 )
