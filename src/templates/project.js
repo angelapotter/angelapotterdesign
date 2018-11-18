@@ -5,7 +5,6 @@ import Layout from '../components/layout'
 import ProjectIntro from '../components/projectIntro'
 
 export default props => {
-  console.log(props);
 
   const imageFromName = ( images,name ) => {
     return images.find(function(image) {
@@ -13,7 +12,7 @@ export default props => {
     })
   }
 
-  const project = props.data.project;
+  const project = props.data.project
   const images = props.data.projectImages.edges
 
   return (
@@ -30,8 +29,8 @@ export default props => {
   )
 }
 
-export const pageQuery = graphql`
-  query ProjectBySlug($slug: String) {
+export const query = graphql`
+  query($slug: String!) {
     project: indexJson(slug: {eq: $slug} ) {
       slug
       name
