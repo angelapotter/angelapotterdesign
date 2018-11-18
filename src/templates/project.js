@@ -13,11 +13,15 @@ export default props => {
     })
   }
 
+  const project = props.data.project;
+  const images = props.data.projectImages.edges
+
   return (
     <Layout containerClassName='constrainWidth'>
       <ProjectIntro
-        title='Control Model Parameters'
-        subhead='Empower analysts to tune control models for natural gas wells' />
+        title={project.name}
+        subhead={project.blurb}
+        fluid={imageFromName(images, 'sample').node.childImageSharp.fluid} />
 
       <div className='content'>
         {props.children}
@@ -25,3 +29,29 @@ export default props => {
     </Layout>
   )
 }
+
+export const pageQuery = graphql`
+  query ProjectBySlug($slug: String) {
+    project: indexJson(slug: {eq: $slug} ) {
+      slug
+      name
+      blurb
+      show_case_study
+      company
+      role
+      platform
+    }
+    projectImages: allFile(filter: { relativeDirectory: { eq: $slug } }) {
+      edges {
+         node {
+          name
+          childImageSharp {
+            fluid(maxWidth: 2880) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`
