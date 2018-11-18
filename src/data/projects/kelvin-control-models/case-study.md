@@ -1,13 +1,25 @@
-## Context
-I’ll start by describing some key concepts:
+---
+title: "Control Model Parametrs"
+path: "/blog/my-first-post"
+date: "2017-11-07"
+---
 
-1. Plunger lifts are used in natural gas wells to increase production.
-2. Kelvin has sensors on each well that detect gas flow, pressure, vibrations, and other data.
-3. The Kelvin data science team writes control models that optimize production by controlling plunger cycles.
+<br>
+
+![Kelvin control models](sample.png)
+
+## Context
+This project is for Kelvin, an industrial automation company. Some key background info:
+
+1. __Plunger lifts__ are used in natural gas wells to increase production.
+2. Kelvin has __sensors__ on each well that detect gas flow, pressure, vibrations, and other data.
+3. The Kelvin data science team writes __control models__ that optimize production by controlling plunger cycles.
 
 ## The Kelvin Application
 
 Before this project began, the Kelvin app was a monitoring and ticketing system for oil and gas. We supported 3 main personas for our clients:
+
+![Architecture diagrams](architecture-diagrams.png)
 
 <Grid>
 

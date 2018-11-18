@@ -53,7 +53,7 @@ export const query = graphql`
         }
       }
     }
-    caseStudy: file(name: {eq: $slug}) {
+    caseStudy: file(relativeDirectory: {eq: "projects/kelvin-control-models"}, name: {eq: "case-study"}) {
       childMarkdownRemark {
         html
       }
