@@ -22,8 +22,9 @@ export default props => {
         subhead={project.blurb}
         fluid={imageFromName(images, 'sample').node.childImageSharp.fluid} />
 
-      <div className='content'>
-        {props.children}
+      <div
+        className='content'
+        dangerouslySetInnerHTML={{ __html: props.data.caseStudy.childMarkdownRemark.html}}>
       </div>
     </Layout>
   )
@@ -40,7 +41,7 @@ export const query = graphql`
       role
       platform
     }
-    projectImages: allFile(filter: { relativeDirectory: { eq: $slug } }) {
+    projectImages: allFile(filter: { relativeDirectory: {eq: $slug} }) {
       edges {
          node {
           name
@@ -50,6 +51,11 @@ export const query = graphql`
             }
           }
         }
+      }
+    }
+    caseStudy: file(name: {eq: $slug}) {
+      childMarkdownRemark {
+        html
       }
     }
   }
