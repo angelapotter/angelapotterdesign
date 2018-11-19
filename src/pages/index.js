@@ -13,7 +13,9 @@ export default ({data}) => (
 
 export const query = graphql`
   query {
-    projects: allMarkdownRemark {
+    projects: allMarkdownRemark (
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       edges {
         node {
           frontmatter {

@@ -1,10 +1,9 @@
 ---
-title: "Control Model Parametrs"
-company: "Kelvin"
-platform: "Web"
-slug: "kelvin-control-models"
-date: "March 2018"
-blurb: "Empower analysts to tune control models for natural gas wells"
+slug: kelvin-control-models
+title: Control Model Parameters
+company: Kelvin
+date: 2018-03-01
+blurb: Empower analysts to tune control models for natural gas wells
 ---
 
 <div class='sampleImage'>

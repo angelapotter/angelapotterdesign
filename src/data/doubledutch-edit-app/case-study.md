@@ -1,10 +1,10 @@
 ---
-title: "Edit Event App"
-company: "DoubleDutch"
-platform: "Web"
-slug: "doubledutch-edit-app"
-date: "March 2018"
-blurb: "Guide event organizers through editing and submitting their mobile event app"
+slug: doubledutch-edit-app
+title: Edit Event App
+blurb: Guide event organizers through editing and submitting their mobile event app
+date: 2016-10-01
+company: DoubleDutch
+date: March 2018
 ---
 
 <div class='sampleImage'>

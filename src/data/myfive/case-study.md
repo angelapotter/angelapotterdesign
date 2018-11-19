@@ -1,0 +1,13 @@
+---
+slug: myfive
+title: Gig Tracking App
+blurb: Help freelancers keep track of their referral sources
+date: 2013-05-01
+company: MyFive
+role: UI Design + Prototyping
+platform: Web
+---
+
+<div class='sampleImage'>
+  <img src='sample.png' alt='Gig tracking app' />
+</div>
