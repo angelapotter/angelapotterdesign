@@ -53,3 +53,12 @@ h3 {
 .content .subhead {
   margin-bottom: 1.4rem;
 }
+
+
+.imageBorder {
+  border: 1px solid #ddd;
+}
+
+.imageSpaceTop {
+  margin-top: 40px;
+}
