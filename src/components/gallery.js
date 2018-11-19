@@ -19,9 +19,9 @@ export default props =>  {
     {props.projects.map((project) => (
 
       <GalleryItem
-        key={project.node.slug}
-        project={project.node}
-        fluid={fluidFromSlug(props.images, project.node.slug)} />
+        key={project.node.frontmatter.slug}
+        project={project.node.frontmatter}
+        fluid={fluidFromSlug(props.images, project.node.frontmatter.slug)} />
     ))}
   </div>
 )}

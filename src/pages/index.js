@@ -7,17 +7,19 @@ import Gallery from "../components/gallery"
 export default ({data}) => (
   <Layout>
     <h1>Work</h1>
-    <Gallery projects={data.allIndexJson.edges} images={data.coverImages.edges} />
+    <Gallery projects={data.projects.edges} images={data.coverImages.edges} />
   </Layout>
 )
 
 export const query = graphql`
   query {
-    allIndexJson {
+    projects: allMarkdownRemark {
       edges {
         node {
-          name
-          slug
+          frontmatter {
+            slug
+            title
+          }
         }
       }
     }

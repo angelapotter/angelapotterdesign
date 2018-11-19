@@ -10,10 +10,10 @@ export default props => (
       <Img
         className={galleryItemStyles.image}
         fluid={props.fluid}
-        alt={props.project.name} />
+        alt={props.project.title} />
     </div>
     <div className={galleryItemStyles.name}>
-      {props.project.name}
+      {props.project.title}
     </div>
   </Link>
 )

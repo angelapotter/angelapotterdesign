@@ -45,7 +45,7 @@ export const query = graphql`
       role
       platform
     }
-    caseStudy: file(relativeDirectory: {eq: "projects/kelvin-control-models"}, name: {eq: "case-study"}) {
+    caseStudy: file(relativeDirectory: {eq: $slug}, name: {eq: "case-study"}) {
       childMarkdownRemark {
         htmlAst
       }
