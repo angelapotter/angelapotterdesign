@@ -21,6 +21,7 @@
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-typography": "^0.16.13",
+    "rehype-react": "^3.0.3",
     "typography": "^0.16.17"
   }
 }

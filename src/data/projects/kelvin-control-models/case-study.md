@@ -22,62 +22,58 @@ This project is for Kelvin, an industrial automation company. Some key backgroun
 
 Before this project began, the Kelvin app was a monitoring and ticketing system for oil and gas. We supported 3 main personas for our clients:
 
-<Grid>
-
-  <ProjectPersona
-    fixed={imageFromName(props.data.avatars.edges, 'pumper-avatar').node.childImageSharp.fixed}
-    name='Pumper'>
+<grid>
+  <div>
+    <div class='avatarSmall'>
+      <img src='avatars/pumper-avatar.jpg' alt='Pumper avatar' />
+    </div>
+    <h3>Pumper</h3>
     <p>Creates daily reports for ~<b>30 wells</b> based on what he sees in the field</p>
     <p>Performs routine well maintenance, adjusts new wells and recommends <b>equipment changes</b></p>
     <p>Cares about identifying issues early</p>
-  </ProjectPersona>
-
-  <ProjectPersona
-    fixed={imageFromName(props.data.avatars.edges, 'optimizer-avatar').node.childImageSharp.fixed}
-    name='Optimizer'>
+  </div>
+  <div>
+    <div class='avatarSmall'>
+      <img src='avatars/optimizer-avatar.jpg' alt='Optimizer avatar' />
+    </div>
+    <h3>Optimizer</h3>
     <p>Diagnoses systemic defects for ~<b>300 wells</b> based on analysis of charts & logs</p>
     <p>Adjusts valve <b>open/close criteria</b> and recommends equipment changes</p>
     <p>Cares about deviation from expected production</p>
-  </ProjectPersona>
-
-  <ProjectPersona
-    fixed={imageFromName(props.data.avatars.edges, 'optimization-lead-avatar').node.childImageSharp.fixed}
-    name='Optimization Lead'>
+  </div>
+  <div>
+    <div class='avatarSmall'>
+      <img src='avatars/optimization-lead-avatar.jpg' alt='Optimization lead avatar' />
+    </div>
+    <h3>Optimization Lead</h3>
     <p>Oversees a team of 5-10 optimizers</p>
     <p>Calculates <b>ROI</b> by comparing production, touchpoints, & equipment costs</p>
     <p>Cares about the success of the Kelvin pilot</p>
-  </ProjectPersona>
+  </div>
+</grid>
 
-</Grid>
+## Building a Control Platform
 
-<h2>Building a Control Platform</h2>
+We needed to make a pivot in order to scale as a company:
 
-<p>We needed to make a pivot in order to scale as a company:</p>
+*   Monitoring's nice, but clients want automation
+*   Our existing control models are custom made. We spend a ton of internal resources building and tweaking them.
+*   We don’t want to be tied to the oil & gas industry
+*   Eventually, we want to empower clients to manage their own control models. As a first step, we need to make this process easier for our internal team.
 
-<ul>
-  <li>Monitoring's nice, but clients want automation</li>
-  <li>Our existing control models are custom made. We spend a ton of internal resources building and tweaking them.</li>
-  <li>We don’t want to be tied to the oil & gas industry</li>
-  <li>Eventually, we want to empower clients to manage their own control models. As a first step, we need to make this process easier for our internal team.</li>
-</ul>
+This was an ambitious set of goals. The design team's biggest initial questions we had were:
 
-<p>This was an ambitious set of goals. The design team's biggest initial questions we had were:</p>
+*   How do we add immediate value, while moving toward our longterm goal?
+*   What control models do we have now and what do they actually do?
+*   What users and use cases should we focus on?
+*   How does our data team manage models today?
 
-<ul>
-  <li>How do we add immediate value, while moving toward our longterm goal?</li>
-  <li>What control models do we have now and what do they actually do?</li>
-  <li>What users and use cases should we focus on?</li>
-  <li>How does our data team manage models today?</li>
-</ul>
+## User Research
 
-<h2>User Research</h2>
-
-<Grid>
-  <Img
-    style={{gridColumn: 'span 2'}}
-    fluid={imageFromName(props.data.projectImages.edges, 'data-interviews').node.childImageSharp.fluid} />
-  <p className='subhead'>We interviewed 8 data team members to better understand their workflow.</p>
-</Grid>
+<grid>
+  <div class='colSpan2'><img src='data-interviews.png' alt='Data interviews' /></div>
+  <p class='subhead'>We interviewed 8 data team members to better understand their workflow.</p>
+</grid>
 
 When we started, we didn't know a lot about __how control models work__ on our team. These were our takeaways:
 
@@ -95,22 +91,27 @@ Initially we thought the target user was a "member of the data science team." Wh
 
 Based on this, we decided to focus on those data team members, and defined them as a new persona:
 
-<ProjectPersona
-  fixed={imageFromName(props.data.avatars.edges, 'super-optimizer-avatar').node.childImageSharp.fixed}
-  name='Super Optimizer'>
-  <p>Currently a <b>Kelvin data team member</b>, but a role that we expect clients to have in the future; replaces several optimizers</p>
-  <p>Has domain expertise and understands the basics of control models; does not code</p>
-  <p>Diagnoses and adjusts control model parameters; could write simple if-then models from scratch</p>
-  <p>Cares about control model adaptability</p>
-</ProjectPersona>
+<div class='avatarLarge spaceTop'>
+  <img src='avatars/super-optimizer-avatar.jpg' alt='Super-optimizer avatar' />
+</div>
 
-<p>We identifed several key user needs that we could address as part of this project. Super-optimizers want to:</p>
+### Super-Optimizer
 
-<ul>
-  <li>Enable control models on new wells and tune them to work for new environments, equipment, and client needs.</li>
-  <li>Easily see whether a model is performing optimally on a given well, and diagnose issues.</li>
-  <li>Give clients transparency into how successfully models are running and what changes are being made.</li>
-</ul>
+Currently a __Kelvin data team member__, but a role that we expect clients to have in the future; replaces several optimizers
+
+Has domain expertise and understands the basics of control models; does not code
+
+Diagnoses and adjusts __control model parameters__; could write simple if-then models from scratch
+
+Cares about control model adaptability
+
+## Use Cases
+
+We identifed several key user needs that we could address as part of this project. Super-optimizers want to:
+
+*   Enable control models on new wells and tune them to work for new environments, equipment, and client needs.
+*   Easily see whether a model is performing optimally on a given well, and diagnose issues.
+*   Give clients transparency into how successfully models are running and what changes are being made.
 
 ## App Architecture
 
@@ -120,8 +121,7 @@ I created some diagrams to show how models could __fit into our existing applica
 
 ## Model Content
 
-<Grid>
-
+<grid>
   <div>
     <p>A big piece of this project was determining <b>what actually needed to be shown and edited</b> for our control models. It was a long process of interviews and information-gathering sessions with the data team to figure out:</p>
     <ul>
@@ -130,13 +130,10 @@ I created some diagrams to show how models could __fit into our existing applica
       <li>What context do users need to actually change a model parameter?</li>
     </ul>
   </div>
-
-  <Img
-    style={{gridColumn: 'span 2'}}
-    fluid={fluidFromName(props.data.projectImages, 'model-content')}
-    alt='Model content documenation' />
-
-</Grid>
+  <div class='colSpan2'>
+    <img src='model-content.png' alt='Model content documenation' />
+  </div>
+</grid>
 
 ## Initial Wireframes
 
@@ -153,7 +150,7 @@ I knew that the super-optimizer needed to reference __RTU settings__ to make mod
 
 From feedback on these mockups, I was able to narrow down exactly what information was needed for each model parameter so I could refine this.
 
-<img src='hi-fi-v1.png' alt='High fidelity mockup' style='border: 1px solid #ddd' class='imageBorder' />
+<img src='hi-fi-v1.png' alt='High fidelity mockup' class='border' />
 
 ## Final Design
 
@@ -177,18 +174,15 @@ We recently released this internally and to all clients. It’s still early but 
 *   Give clients transparency into what model changes are being made
 *   Learn clients’ current level of interest in tuning their own models
 
-<Grid>
-  <div style={{gridColumn: 'span 2'}}>
+<grid>
+  <div class='colSpan2'>
     <h2>Followup Improvements</h2>
     <p>As development started, we realized that we needed to think in a more modular way with our layouts to support new models in the future. I worked with the development team to create components that could be built from a <b>JSON</b> file.</p>
     <p>As we were rolling this out to production, there was some confusion about what each parameter means. This especially came up in training people who weren't familiar with the models. We added a <b>tooltip</b> component that could be added to the JSON, and I worked with the data team to get the language right.</p>
-    <Img
-      style={{gridColumn: 'span 2'}}
-      fluid={fluidFromName(props.data.projectImages, 'json-redlines')}
-      alt='JSON redlines' />
+    <img src='json-redlines.png' alt='JSON redlines' />
   </div>
+  <img src='tooltips.png' alt='Tooltips' />
+</grid>
 
-  <Img
-    fluid={fluidFromName(props.data.projectImages, 'tooltips')}
-    alt='Tooltips' />
-</Grid>
+
+

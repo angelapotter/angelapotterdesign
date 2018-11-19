@@ -3,8 +3,8 @@ import Img from "gatsby-image"
 
 export default props => (
   <div>
-    <Img
-      fixed={props.fixed}
+    <img
+      src={props.fixed}
       alt={props.name} />
     <h3>{props.name}</h3>
 

@@ -54,11 +54,26 @@ h3 {
   margin-bottom: 1.4rem;
 }
 
+/* portfolio utils */
 
-.imageBorder {
+.border {
   border: 1px solid #ddd;
 }
 
-.imageSpaceTop {
+.spaceTop {
   margin-top: 40px;
+}
+
+.colSpan2 {
+  grid-column: span 2;
+}
+
+.avatarSmall {
+  width: 80px;
+  height: 80px;
+}
+
+.avatarLarge {
+  width: 200px;
+  height: 200px;
 }

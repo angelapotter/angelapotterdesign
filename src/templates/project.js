@@ -1,8 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import rehypeReact from "rehype-react"
 
 import Layout from '../components/layout'
 import ProjectIntro from '../components/projectIntro'
+
+// for the case study
+import ProjectPersona from '../components/projectPersona'
+import Grid from '../components/grid'
 
 export default props => {
 
@@ -12,6 +17,14 @@ export default props => {
     })
   }
 
+  const renderAst = new rehypeReact({
+    createElement: React.createElement,
+    components: {
+      'grid': Grid ,
+      'project-persona': ProjectPersona
+    }
+  }).Compiler
+
   const project = props.data.project
   const images = props.data.projectImages.edges
 
@@ -19,12 +32,13 @@ export default props => {
     <Layout containerClassName='constrainWidth'>
       <ProjectIntro
         title={project.name}
-        subhead={project.blurb}
-        fluid={imageFromName(images, 'sample').node.childImageSharp.fluid} />
+        subhead={project.blurb} />
 
       <div
-        className='content'
-        dangerouslySetInnerHTML={{ __html: props.data.caseStudy.childMarkdownRemark.html}}>
+        className='content'>
+        {
+          renderAst(props.data.caseStudy.childMarkdownRemark.htmlAst)
+        }
       </div>
     </Layout>
   )
@@ -55,7 +69,7 @@ export const query = graphql`
     }
     caseStudy: file(relativeDirectory: {eq: "projects/kelvin-control-models"}, name: {eq: "case-study"}) {
       childMarkdownRemark {
-        html
+        htmlAst
       }
     }
   }
