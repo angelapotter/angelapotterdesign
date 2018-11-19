@@ -7,9 +7,9 @@ date: "March 2018"
 blurb: "Empower analysts to tune control models for natural gas wells"
 ---
 
-<br>
-
-![Kelvin control models](sample.png)
+<div class='sampleImage'>
+  <img src='sample.png' alt='Kelvin control models' />
+</div>
 
 ## Context
 This project is for Kelvin, an industrial automation company. Some key background info:

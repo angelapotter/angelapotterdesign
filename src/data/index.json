@@ -5,8 +5,7 @@
       "role": "Lead Design",
       "platform": "Web",
       "slug": "kelvin-control-models",
-      "blurb": "Empower analysts to tune control models for natural gas wells",
-      "show_case_study": true
+      "blurb": "Empower analysts to tune control models for natural gas wells"
    },
    {
       "name": "Unified Messaging",
@@ -14,8 +13,7 @@
       "role": "End-to-End Design",
       "platform": "Web & Mobile",
       "slug": "doubledutch-unified-messaging",
-      "blurb": "Allow event attendees to see all their chat activity in one place",
-      "show_case_study": true
+      "blurb": "Allow event attendees to see all their chat activity in one place"
    },
    {
       "name": "Attendee Engagement Report",
@@ -23,8 +21,7 @@
       "role": "End-to-End Design",
       "platform": "Web & Mobile",
       "slug": "doubledutch-engagement-report",
-      "blurb": "Visualize attendee behavior for event organizers",
-      "show_case_study": true
+      "blurb": "Visualize attendee behavior for event organizers"
    },
    {
       "name": "Edit Event App",
@@ -32,8 +29,7 @@
       "role": "End-to-End Design",
       "platform": "Web",
       "slug": "doubledutch-edit-app",
-      "blurb": "Guide event organizers through editing and submitting their mobile event app",
-      "show_case_study": true
+      "blurb": "Guide event organizers through editing and submitting their mobile event app"
    },
    {
       "name": "E-Commerce Checkout",
@@ -42,7 +38,6 @@
       "platform": "Web",
       "slug": "goldbely-checkout",
       "blurb": "Enable foodies to buy and schedule food orders from across the country",
-      "show_case_study": true,
       "outbound_link": {
          "label": "View on Goldbely.com",
          "url": "https://www.goldbely.com"
@@ -58,8 +53,7 @@
       "outbound_link": {
          "label": "View on Goldbely.com",
          "url": "https://www.goldbely.com"
-      },
-      "show_case_study": true
+      }
    },
    {
       "name": "E-Commerce Order History",

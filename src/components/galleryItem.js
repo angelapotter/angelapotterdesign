@@ -9,7 +9,7 @@ export default props => (
     <div className={galleryItemStyles.imageContainer}>
       <Img
         className={galleryItemStyles.image}
-        fluid={props.image.node.childImageSharp.fluid}
+        fluid={props.fluid}
         alt={props.project.name} />
     </div>
     <div className={galleryItemStyles.name}>

@@ -10,6 +10,10 @@ export default props =>  {
     })
   }
 
+  const fluidFromSlug = ( images, slug ) => {
+    return imageFromSlug(images, slug).node.childImageSharp.fluid;
+  }
+
   return(
   <div className={galleryStyles.gallery}>
     {props.projects.map((project) => (
@@ -17,7 +21,7 @@ export default props =>  {
       <GalleryItem
         key={project.node.slug}
         project={project.node}
-        image={imageFromSlug(props.images, project.node.slug)} />
+        fluid={fluidFromSlug(props.images, project.node.slug)} />
     ))}
   </div>
 )}
