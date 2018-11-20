@@ -18,6 +18,7 @@ export default props =>  {
   <div className={galleryStyles.gallery}>
     {props.projects.map((project) => (
       <GalleryItem
+        key={project.node.frontmatter.slug}
         slug={project.node.frontmatter.slug}
         title={project.node.frontmatter.title}
         fluid={fluidFromSlug(props.images, project.node.frontmatter.slug)} />
