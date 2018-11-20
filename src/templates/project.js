@@ -9,7 +9,6 @@ import ProjectIntro from '../components/projectIntro'
 import Grid from '../components/grid'
 
 export default props => {
-
   const renderAst = new rehypeReact({
     createElement: React.createElement,
     components: {
@@ -17,13 +16,16 @@ export default props => {
     }
   }).Compiler
 
-  const project = props.data.project
+  const projectInfo = props.data.project.frontmatter
 
   return (
     <Layout containerClassName='constrainWidth'>
       <ProjectIntro
-        title={project.name}
-        subhead={project.blurb} />
+        title={projectInfo.title}
+        subhead={projectInfo.blurb}
+        company={projectInfo.company}
+        role={projectInfo.role}
+        date={projectInfo.date} />
 
       <div
         className='content'>
@@ -37,13 +39,15 @@ export default props => {
 
 export const query = graphql`
   query($slug: String!) {
-    project: indexJson(slug: {eq: $slug} ) {
-      slug
-      name
-      blurb
-      company
-      role
-      platform
+    project: markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+      frontmatter {
+        slug
+        title
+        company
+        role
+        blurb
+        date(formatString: "MMMM YYYY")
+      }
     }
     caseStudy: file(relativeDirectory: {eq: $slug}, name: {eq: "case-study"}) {
       childMarkdownRemark {

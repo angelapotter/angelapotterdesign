@@ -2,6 +2,7 @@
 slug: kelvin-control-models
 title: Control Model Parameters
 company: Kelvin
+role: Led design on a team of 3
 date: 2018-03-01
 blurb: Empower analysts to tune control models for natural gas wells
 ---

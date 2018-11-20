@@ -1,8 +1,8 @@
 import React from "react"
-import NavLink from './navLink'
 import headerStyles from './header.module.css'
+import NavLink from './navLink'
 
-export default ({children}) => (
+export default props => (
   <div className={headerStyles.header}>
     <NavLink to='/'>Angela Potter</NavLink>
     <div>
