@@ -16,10 +16,11 @@ export default props => {
     }
   }).Compiler
 
+  console.log(props.pageContext);
   const projectInfo = props.data.project.frontmatter
 
   return (
-    <Layout containerClassName='constrainWidth'>
+    <Layout containerClassName='constrainWidth' projectNav prev={props.pageContext.prev} next={props.pageContext.next}>
       <ProjectIntro
         title={projectInfo.title}
         subhead={projectInfo.blurb}
