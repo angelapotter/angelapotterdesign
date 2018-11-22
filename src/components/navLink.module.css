@@ -1,10 +1,19 @@
 .link {
+  position: relative;
   background: white;
 }
 
 .link:hover,
 .link:focus,
-.link:active,
+.link:active {
+  background: #ff0;
+}
+
 .active {
   background: #ff0;
+}
+
+.disabled {
+  color: rgba(0,0,0,0.2);
+  pointer-events: none;
 }
