@@ -4,6 +4,7 @@
 
 .link:hover,
 .link:focus,
-.link:active {
+.link:active,
+.active {
   background: #ff0;
 }

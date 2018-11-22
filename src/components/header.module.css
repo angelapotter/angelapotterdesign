@@ -14,6 +14,7 @@
   line-height: 1.2;
 }
 
-.activeLink {
-  color: rgba( 0,0,0,0.4);
+.disabledLink {
+  color: rgba(0,0,0,0.2);
+  pointer-events: none;
 }
