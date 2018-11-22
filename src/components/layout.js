@@ -5,6 +5,7 @@ import Footer from './footer'
 import ProjectHeader from './projectHeader'
 
 import './theme.css'
+import './project.css'
 
 export default props => {
   return(

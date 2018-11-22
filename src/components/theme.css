@@ -53,32 +53,3 @@ h3 {
 .content .subhead {
   margin-bottom: 1.4rem;
 }
-
-/* portfolio utils */
-
-.border {
-  border: 1px solid #ddd;
-}
-
-.spaceTop {
-  margin-top: 40px;
-}
-
-.colSpan2 {
-  grid-column: span 2;
-}
-
-.avatarSmall {
-  width: 80px;
-  height: 80px;
-}
-
-.avatarLarge {
-  width: 200px;
-  height: 200px;
-}
-
-.sampleImage {
-  margin: 8px 0 60px;
-  max-width: 1440px;
-}
