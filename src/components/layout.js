@@ -6,6 +6,7 @@ import ProjectHeader from './projectHeader'
 
 import './theme.css'
 import './project.css'
+import './device-frames.scss'
 
 export default props => {
   return(

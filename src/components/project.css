@@ -1,0 +1,26 @@
+.border {
+  border: 1px solid rgba(0,0,0,0.15);
+}
+
+.spaceTop {
+  margin-top: 40px;
+}
+
+.colSpan2 {
+  grid-column: span 2;
+}
+
+.avatarSmall {
+  width: 80px;
+  height: 80px;
+}
+
+.avatarLarge {
+  width: 200px;
+  height: 200px;
+}
+
+.sampleImage {
+  margin: 8px 0 60px;
+  max-width: 1440px;
+}

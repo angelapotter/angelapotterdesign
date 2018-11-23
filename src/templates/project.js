@@ -7,12 +7,14 @@ import ProjectIntro from '../components/projectIntro'
 
 // for the case study
 import Grid from '../components/grid'
+import BrowserChrome from '../components/browserChrome'
 
 export default props => {
   const renderAst = new rehypeReact({
     createElement: React.createElement,
     components: {
-      'grid': Grid
+      'grid': Grid,
+      'browser-chrome': BrowserChrome
     }
   }).Compiler
 

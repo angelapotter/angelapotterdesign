@@ -7,8 +7,12 @@ company: DoubleDutch
 role: Sole designer
 ---
 
-<div class='sampleImage'>
-  <img src='sample.png' alt='DoubleDutch Edit App' />
+<div class='sampleImage browser-frame'>
+  <browser-chrome></browser-chrome>
+  <div class='browser-frame__screen'>
+    <div class='browser-screen__border'></div>
+    <img src='sample.png' alt='DoubleDutch edit app' />
+  </div>
 </div>
 
 ## Context
@@ -30,12 +34,31 @@ They would make an edit, check on their app, and then contact us asking why thei
 
 I added phone previews for each field that update live as the event organizer types their details. As they move through the different fields, the phone changes to show where this field will appear to attendees.
 
-![App details](1-app-details.png)
+
+<div class='sampleImage browser-frame'>
+  <browser-chrome></browser-chrome>
+  <div class='browser-frame__screen'>
+    <div class='browser-screen__border'></div>
+    <img src='1-app-details.png' alt='App details' />
+  </div>
+</div>
 
 The event organizer can click through the different media assets and see where each will appear to the attendee.
 
-![App media assets](2-app-media-assets.png)
+<div class='sampleImage browser-frame'>
+  <browser-chrome></browser-chrome>
+  <div class='browser-frame__screen'>
+    <div class='browser-screen__border'></div>
+    <img src='2-app-media-assets.png' alt='App media assets' />
+  </div>
+</div>
 
 Before this design, event organizers edited their app in a modal and clicked a "Save" button to submit it. This really didn't indicate the importance of this action and what it entails. I added a Review & Submit screen where the event organizer can see all their changes and get an explanation of what will happen when they submit their app.
 
-![Review and submit app](3-review-submit-app.png)
+<div class='sampleImage browser-frame'>
+  <browser-chrome></browser-chrome>
+  <div class='browser-frame__screen'>
+    <div class='browser-screen__border'></div>
+    <img src='3-review-submit-app.png' alt='Review and submit app' />
+  </div>
+</div>

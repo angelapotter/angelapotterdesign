@@ -7,8 +7,12 @@ date: 2018-03-01
 blurb: Empower analysts to tune control models for natural gas wells
 ---
 
-<div class='sampleImage'>
-  <img src='sample.png' alt='Kelvin control models' />
+<div class='sampleImage browser-frame'>
+  <browser-chrome></browser-chrome>
+  <div class='browser-frame__screen'>
+    <div class='browser-screen__border'></div>
+    <img src='sample.png' alt='Kelvin control models' />
+  </div>
 </div>
 
 ## Context
@@ -150,13 +154,22 @@ I knew that the super-optimizer needed to reference __RTU settings__ to make mod
 
 From feedback on these mockups, I was able to narrow down exactly what information was needed for each model parameter so I could refine this.
 
-<img src='hi-fi-v1.png' alt='High fidelity mockup' class='border' />
+<div class='border'>
+  <img src='hi-fi-v1.png' alt='High fidelity mockup' />
+</div>
 
 ## Final Design
 
 Model __parameters__ are shown side by side with __performance metrics__ to help inform the user’s decision.
 
-![Final Design - View](final-design-view.png)
+
+<div class='sampleImage browser-frame'>
+  <browser-chrome></browser-chrome>
+  <div class='browser-frame__screen'>
+    <div class='browser-screen__border'></div>
+    <img src='final-design-view.png' alt='Final design - view' />
+  </div>
+</div>
 
 ### Edit mode
 
@@ -164,7 +177,13 @@ Editing a model reveals additional __context__ in the form of calculated and cur
 
 These are the RTU settings that were at the top of the screen in the last mockup
 
-![Final Design - Edit](final-design-edit.png)
+<div class='sampleImage browser-frame'>
+  <browser-chrome></browser-chrome>
+  <div class='browser-frame__screen'>
+    <div class='browser-screen__border'></div>
+    <img src='final-design-edit.png' alt='Final design - edit' />
+  </div>
+</div>
 
 ## Measures of Success
 
