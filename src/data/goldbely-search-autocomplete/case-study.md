@@ -3,8 +3,8 @@ slug: goldbely-search-autocomplete
 title: Product Search
 blurb: Provide visual search results with autosuggest
 date: 2014-10-01
-company: Goldbely
-role: Design
+company: Goldbelly
+role: Sole designer
 platform: Web
 ---
 

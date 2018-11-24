@@ -1,12 +1,17 @@
 import React from "react"
 import Img from "gatsby-image"
 import { graphql } from 'gatsby'
+import { Helmet } from "react-helmet"
 
 import Layout from "../components/layout"
 import aboutStyles from '../components/about.module.css'
 
 export default ({data}) => (
   <Layout containerClassName='constrainWidth'>
+    <Helmet>
+      <title>About | Angela Potter</title>
+    </Helmet>
+
     <h1>Hi, I'm Angela</h1>
     <p className='subhead'>A full-stack product designer in San Francisco</p>
 
@@ -16,7 +21,6 @@ export default ({data}) => (
       alt='Angela Potter' />
 
     <div className='content'>
-
       <h2>What motivates me</h2>
       <p>I love removing friction from people’s lives so they can focus on their passions.</p>
       <p>People have a limited supply of cognitive resources. They should spend these resources on the things they care about, not figuring out how to use software.</p>

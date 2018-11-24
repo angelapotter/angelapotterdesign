@@ -1,10 +1,15 @@
 import React from "react"
+import { Helmet } from "react-helmet"
 
 import Layout from "../components/layout"
 import resumeStyles from '../components/resume.module.css'
 
 export default () => (
   <Layout containerClassName='constrainWidth'>
+    <Helmet>
+      <title>Resume | Angela Potter</title>
+    </Helmet>
+
     <h1>Resume</h1>
 
     <div className={resumeStyles.content + ' content'}>

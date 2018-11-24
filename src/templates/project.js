@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import rehypeReact from "rehype-react"
+import { Helmet } from "react-helmet"
 
 import Layout from '../components/layout'
 import ProjectIntro from '../components/projectIntro'
@@ -22,6 +23,10 @@ export default props => {
 
   return (
     <Layout containerClassName='constrainWidth' projectNav prev={props.pageContext.prev} next={props.pageContext.next}>
+      <Helmet>
+        <title>{projectInfo.title} | Angela Potter</title>
+      </Helmet>
+
       <ProjectIntro
         title={projectInfo.title}
         subhead={projectInfo.blurb}
