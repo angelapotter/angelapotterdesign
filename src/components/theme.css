@@ -53,3 +53,17 @@ h3 {
 .content .subhead {
   margin-bottom: 1.4rem;
 }
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+
+  .pageContainer {
+    padding: 20px;
+  }
+
+  .logo {
+    display: none;
+  }
+}

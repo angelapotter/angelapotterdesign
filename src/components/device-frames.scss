@@ -1,3 +1,11 @@
+@function strip($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function em( $target, $context: 16px ) {
+  @return ( strip($target) / strip($context) ) * 1em;
+}
+
 $device-button-color-lightest: rgba(255,255,255,0.5);
 $device-button-color-light: rgba(255,255,255,0.3);
 $device-button-color-dark: rgba(0,0,0,0.4);
@@ -8,11 +16,15 @@ $browser-border-radius: 8px;
   position: relative;
   overflow: hidden;
   background: #444;
+  font-size: 1.1vw;
+
+  @media (min-width: 1440px) {
+    font-size: 100%;
+  }
 }
 
 .browser-frame {
   @extend %device-frame;
-
   border-radius: $browser-border-radius;
 
   img {
@@ -26,29 +38,29 @@ $browser-border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 44px;
-  padding: 0 16px;
+  height: em(44px);
+  padding: 0 em(16px);
 }
 
 .browser-frame__buttons {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 60px;
+  width: em(60px);
 }
 
 .browser-frame__round-button {
-  width: 12px;
-  height: 12px;
+  width: em(12px);
+  height: em(12px);
   border-radius: 50%;
   background: $device-button-color-lightest;
 }
 
 .menu-icon__line {
-  width: 20px;
-  height: 3px;
-  border-radius: 2px;
-  margin: 4px 0;
+  width: em(20px);
+  height: em(3px);
+  border-radius: em(2px);
+  margin: em(4px) 0;
   background: $device-button-color-lightest;
 }
 
@@ -73,17 +85,25 @@ $browser-border-radius: 8px;
 }
 
 // IPHONE
+$iphone-screen-width: em(347px);
+$iphone-screen-height: em(617px);
+$iphone-screen-edge: em(13px);
+
+$iphone-speaker-width: em(72px);
+$iphone-speaker-height: em(9px);
 
 .iphone-frame {
   @extend %device-frame;
-  display: inline-block;
-  border-radius: 46px;
+  display: inline-flex;
+  border-radius: em(46px);
+  align-items: center;
+  flex-flow: column;
 }
 
 .iphone-frame__screen {
-  width: 347px;
-  height: 617px;
-  margin: 0 13px;
+  width: $iphone-screen-width;
+  height: $iphone-screen-height;
+  margin: 0 $iphone-screen-edge;
   overflow: hidden;
 
   img {
@@ -97,35 +117,63 @@ $browser-border-radius: 8px;
   height: 11px;
   border-radius: 50%;
   background: $device-button-color-dark;
-
   margin: em(15px) auto 0;
 }
 
 .iphone-frame__sensor {
   position: absolute;
-  top: 37px;
-  left: 117px;
-  width: 13px;
-  height: 13px;
+  top: em(37px);
+  left: em(117px);
+  width: em(13px);
+  height: em(13px);
   border-radius: 50%;
   background: $device-button-color-light;
 }
 
 .iphone-frame__speaker {
-  width: 72px;
-  height: 9px;
-  margin: 13px auto 40px;
-  border-radius: 5px;
+  width: $iphone-speaker-width;
+  height: $iphone-speaker-height;
+  margin: em(13px) auto em(40px);
+  border-radius: em(5px);
   background: $device-button-color-light;
 }
 
 .iphone-frame__home-button {
-  width: 62px;
-  height: 62px;
+  width: em(62px);
+  height: em(62px);
   border-radius: 50%;
   box-sizing: border-box;
-  border: 3px solid $device-button-color-light;
-  margin: 14px auto;
+  border: em(3px) solid $device-button-color-light;
+  margin: em(14px);
+}
+
+// IPHONE - LANDSCAPE
+
+.iphone-frame--landscape {
+  @extend .iphone-frame;
+  flex-flow: row;
+
+  .iphone-frame__screen {
+    width: $iphone-screen-height;
+    height: $iphone-screen-width;
+    margin: $iphone-screen-edge 0;
+  }
+
+  .iphone-frame__camera {
+    margin: 0 0 0 em(15px);
+  }
+
+  .iphone-frame__sensor {
+    bottom: em(117px);
+    left: em(37px);
+    top: auto;
+  }
+
+  .iphone-frame__speaker {
+    width: $iphone-speaker-height;
+    height: $iphone-speaker-width;
+    margin: 0 em(40px) 0 em(13px);
+  }
 }
 
 // ANDROID
@@ -133,36 +181,36 @@ $browser-border-radius: 8px;
 .android-frame {
   @extend %device-frame;
   display: inline-block;
-  border-radius: 34px;
+  border-radius: em(34px);
 }
 
 .android-frame__speaker,
 .android-frame__mic {
-  width: 137px;
-  height: 16px;
-  border-radius: 8px;
+  width: em(137px);
+  height: em(16px);
+  border-radius: em(8px);
   background: $device-button-color-dark;
 }
 
 .android-frame__speaker {
-  margin: 26px auto 31px;
+  margin: em(26px) auto em(31px);
 }
 
 .android-frame__camera {
-  width: 13px;
-  height: 13px;
+  width: em(13px);
+  height: em(13px);
   border-radius: 50%;
   background: $device-button-color-light;
 
   position: absolute;
-  top: 27px;
-  left: 70px;
+  top: em(27px);
+  left: em(70px);
 }
 
 .android-frame__screen {
-  width: 356px;
-  height: 632px;
-  margin: 0 10px;
+  width: em(356px);
+  height: em(632px);
+  margin: 0 em(10px);
   overflow: hidden;
 
   img {
@@ -172,5 +220,5 @@ $browser-border-radius: 8px;
 }
 
 .android-frame__mic {
-  margin: 31px auto 26px;
+  margin: em(31px) auto em(26px);
 }

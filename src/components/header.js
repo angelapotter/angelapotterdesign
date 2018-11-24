@@ -4,7 +4,7 @@ import NavLink from './navLink'
 
 export default props => (
   <div className={headerStyles.header}>
-    <NavLink to='/'>Angela Potter</NavLink>
+    <NavLink to='/' className='logo'>Angela Potter</NavLink>
     <div>
       <NavLink to='/' showActive>Work</NavLink>,&nbsp;
       <NavLink to='/about' showActive>About</NavLink>,&nbsp;
