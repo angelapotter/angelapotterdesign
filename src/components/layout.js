@@ -8,8 +8,7 @@ import './theme.css'
 import './project.css'
 import './device-frames.scss'
 
-export default props => {
-  return(
+export default props => (
   <div>
     { props.projectNav ? <ProjectHeader prev={props.prev} next={props.next} /> : <Header /> }
     <div className={'pageContainer ' + (props.containerClassName ? props.containerClassName : '')}>
@@ -17,4 +16,4 @@ export default props => {
     </div>
     <Footer />
   </div>
-)}
+)

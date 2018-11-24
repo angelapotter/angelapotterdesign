@@ -18,7 +18,6 @@ export default props => {
     }
   }).Compiler
 
-  console.log(props.pageContext);
   const projectInfo = props.data.project.frontmatter
 
   return (

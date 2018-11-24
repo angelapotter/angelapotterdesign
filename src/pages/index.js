@@ -25,7 +25,7 @@ export const query = graphql`
         }
       }
     }
-    coverImages: allFile(filter: { extension: {eq: "jpg"}, name: { eq: "cover" } }) {
+    coverImages: allFile(filter: { name: { eq: "cover" } }) {
       edges {
          node {
           relativeDirectory
