@@ -16,4 +16,4 @@ platform: Web
   </div>
 </div>
 
-Case study coming soon!
+## Case study coming soon

@@ -6,6 +6,10 @@
   margin-top: 40px;
 }
 
+.spaceBottom {
+  margin-bottom: 40px;
+}
+
 .colSpan2 {
   grid-column: span 2;
 }

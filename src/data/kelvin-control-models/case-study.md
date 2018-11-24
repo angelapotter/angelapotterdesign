@@ -163,7 +163,7 @@ From feedback on these mockups, I was able to narrow down exactly what informati
 Model __parameters__ are shown side by side with __performance metrics__ to help inform the user’s decision.
 
 
-<div class='sampleImage browser-frame'>
+<div class='browser-frame'>
   <browser-chrome></browser-chrome>
   <div class='browser-frame__screen'>
     <div class='browser-screen__border'></div>

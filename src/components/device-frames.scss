@@ -69,6 +69,7 @@ $browser-border-radius: 8px;
     bottom: 1px solid rgba(0,0,0,0.15);
     left: 1px solid rgba(0,0,0,0.15);
   };
+  pointer-events: none; // to keep the image clickable
 }
 
 // IPHONE
@@ -76,7 +77,7 @@ $browser-border-radius: 8px;
 .iphone-frame {
   @extend %device-frame;
   display: inline-block;
-  border-radius: em(46px);
+  border-radius: 46px;
 }
 
 .iphone-frame__screen {
@@ -131,9 +132,8 @@ $browser-border-radius: 8px;
 
 .android-frame {
   @extend %device-frame;
-
   display: inline-block;
-  border-radius: em(34px);
+  border-radius: 34px;
 }
 
 .android-frame__speaker,
