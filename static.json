@@ -1,6 +1,6 @@
 {
   "root": "public/",
   "routes": {
-    "/**": "templates/project.js",
+    "/kelvin-control-models": "templates/project.js"
   }
 }
