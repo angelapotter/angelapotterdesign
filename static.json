@@ -2,5 +2,13 @@
   "root": "public/",
   "routes": {
     "/kelvin-control-models": "templates/project.js"
+  },
+  "redirects": {
+    "/work": {
+      "url": "/"
+    },
+    "/portfolio": {
+      "url": "/"
+    }
   }
 }
