@@ -28,7 +28,7 @@ export default ({data}) => (
       <h2>What I do</h2>
       <p>I take design from ideation through implementation. I use a combination of quantitative and qualitative data to solve problems and reach business goals. When I talk to users, I dig deep to uncover their true needs and goals.</p>
       <p>I think big but start small. I’m always weighing tradeoffs of delivering immediate value while moving toward the long-term vision.</p>
-      <p>I used to do front-end development and love working with engineers. Undestanding technical constraints is a big part of the job. I work best when I’m rapidly iterating with a small cross-functional team.</p>
+      <p>I also do front-end development (I built this site in Gatsby + React) and love working with engineers. Undestanding technical constraints is a big part of the job. I work best when I’m rapidly iterating with a small cross-functional team.</p>
     </div>
   </Layout>
 )
