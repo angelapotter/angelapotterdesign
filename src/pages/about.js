@@ -23,12 +23,12 @@ export default ({data}) => (
     <div className='content'>
       <h2>What motivates me</h2>
       <p>I love removing friction from people’s lives so they can focus on their passions.</p>
-      <p>People have a limited supply of cognitive resources. They should spend these resources on the things they care about, not figuring out how to use software.</p>
+      <p>People have a limited supply of cognitive resources. They should spend them on the things they care about, not figuring out how to use software.</p>
 
       <h2>What I do</h2>
       <p>I take design from ideation through implementation. I use a combination of quantitative and qualitative data to solve problems and reach business goals. When I talk to users, I dig deep to uncover their true needs and goals.</p>
       <p>I think big but start small. I’m always weighing tradeoffs of delivering immediate value while moving toward the long-term vision.</p>
-      <p>I also do front-end development (I built this site in Gatsby + React) and love working with engineers. Undestanding technical constraints is a big part of the job. I work best when I’m rapidly iterating with a small cross-functional team.</p>
+      <p>I also do front-end development (I built this site in Gatsby + React), and I love working with engineers. Understanding technical constraints is a big part of the job. I work best when I’m rapidly iterating with a small cross-functional team.</p>
     </div>
   </Layout>
 )

@@ -1,7 +1,7 @@
 ---
 slug: kelvin-pump-cards
 title: Pump Cards
-blurb: Enable analysts to diagnose beam pumps with XY plots of each cycle
+blurb: Diagnose beam pumps with XY plots of each cycle
 date: 2017-12-01
 company: Kelvin
 role: Led design on a team of 2
@@ -27,26 +27,29 @@ platform: Web
   <div class='iphone-frame__home-button'></div>
 </div>
 
-## Existing Design
-
-I picked up this project when I first got to Kelvin, and some design had been done already. The project had been put on hold and the previous designer left the company. Here's what I started with:
-
-![Pump cards - before](before.png)
-
 ## Context
 
 What are pump cards and why do this project?
 
 1.   A pump “card” is an XY plot that represents a single cycle of a beam pump (rod string load × pump displacement).
-2.   This is a brand new chart type for Kelvin &mdash; all charts thus far have been timeseries.
-3.   Analystss at energy companies use pump cards to diagnose beam pump performance issues. Currently this is done by through antiquated software than can only pull one card per day.
+2.   This is a brand new chart type for Kelvin &mdash; all charts thus far have been time series.
+3.   Analysts at energy companies use pump cards to diagnose beam pump performance issues. Currently this is done by through antiquated software than can only pull one card per day.
+
+
+## Existing Design
+
+I picked up this project when I first got to Kelvin, and some design had been done already. Here's what I started with:
+
+![Pump cards - before](before.png)
+
+In this design, the user chooses a date range, and one card per day is shown on the chart. Since there are multiple beam pump cycles per day, it wasn't clear from the design which card would be shown. The project had been put on hold, and the previous designer left the company a few months ago.
 
 <grid>
   <div class='colSpan2'>
     <img src='beam-pump-notes.jpg' alt='Beam pump notes'></img>
   </div>
   <div>
-    <h2>Understanding Pump cards</h2>
+    <h2>Understanding Pump Cards</h2>
     <p>I didn't know anything about how beam pumps or pump cards work, so the first order of business was to do some background research.
     <h3>Q&A With Data Scientist</h3>
     <p>I scheduled a session with our resident beam pump expert to understand how the machine works, how the pump card is derived, and how it originated.</p>
@@ -77,6 +80,8 @@ As an optimizer, I want to:
 *   See the overall trend from the last 90 days.
 
 ## Final Designs
+
+In my design, the biggest change was that the user selects one or more specific points in time to compare, rather than selecting a time range. The gray area represents a range of typical cards for this pump, and anomalous ("warning") cards appear in orange. The basics of this feature have been developed, but our data science team is still working on the logic to display the typical range and warning cards.
 
 <div class='browser-frame'>
   <browser-chrome></browser-chrome>

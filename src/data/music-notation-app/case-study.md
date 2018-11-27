@@ -4,6 +4,7 @@ title: Music Notation App
 blurb: Compose music on your phone
 date: 2014-04-01
 role: Design
+company: Side project
 platform: Android
 ---
 
