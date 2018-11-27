@@ -4,7 +4,7 @@ title: E-Commerce Checkout
 blurb: Enable foodies to buy and schedule food orders from across the country
 date: 2015-11-01
 company: Goldbelly
-role: Lead designer + front-end developer
+role: Lead designer + front-end dev
 platform: Web
 ---
 

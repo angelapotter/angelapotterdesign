@@ -4,7 +4,7 @@ title: OLSET Hotel Matches
 blurb: Provide business travelers with personalized hotel matches
 date: 2013-12-01
 company: OLSET
-role: Design + Front-End Dev
+role: Design + front-end dev
 platform: Web
 ---
 

@@ -3,6 +3,7 @@ title: Any.do Hotel Matches
 company: OLSET
 platform: Web
 slug: anydo-hotel-matches
+role: Design + front-end dev
 date: 2014-04-01
 blurb: Allow Any.do users to book hotels from their to-do list
 ---
